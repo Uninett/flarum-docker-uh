@@ -28,6 +28,14 @@ Setter opp mysql. Vi ser bort i fra denne.
 
 
 
+
+
+## Build
+
+
+
+	docker build -t skrodal/flarum-docker-uh .
+
 ## Configuration
 
 
@@ -41,11 +49,18 @@ Setter opp mysql. Vi ser bort i fra denne.
 
 
 
-## Build
+## Run
+
+	docker stop flarum && docker rm flarum
+	docker run -d --env-file=./ENV -p 9000:9000 --name flarum skrodal/flarum-docker-uh
+	
 
 
+## Test
 
-	docker build -t skrodal/flarum-docker-uh .
+Visit <http://192.168.99.100:9000>
 
 
-	docker run -d --env-file=./ENV --name flarum skrodal/flarum-docker-uh
+## Debug
+
+	docker exec -ti flarum bash
