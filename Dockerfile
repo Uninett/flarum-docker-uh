@@ -1,6 +1,5 @@
 FROM php:5.6-fpm
 
-MAINTAINER Simon Skrødal <simon.skrodal@uninett.no>
 MAINTAINER Andreas Åkre Solberg <andreas@solweb.no>
 
 # ------------------
