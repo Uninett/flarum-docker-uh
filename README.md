@@ -40,63 +40,7 @@ DATAPORTEN_CLIENTSECRET=DATAPORTEN_CLIENT_SECRET
 
 Run a new container:
 
-> docker run -d -p 80:80 --name flarum uninettno/dataporten-flarum
-
-To install Flarum, you have a few choices:
-
-1. Enter config in Flarum's web ui, or
-2. Enter config in terminal:
-    - `php flarum install -d` for prompts
-    - `php flarum install -f filename` to use a config file (see sample below)
-
-#### Sample config
-
-Sample below if you would like to install Flarum using a config.yml file:
-
-```yaml
-baseUrl : "http://127.0.0.1/path_to_flarum/"
-databaseConfiguration :
-    host : "localhost"
-    database : "flarum_database_name"
-    prefix: "flarum_table_name_prefix_"
-    username : "username"
-    password : "password"
-adminUser : 
-    username : "adminuser"
-    password : "adminpassword"
-    password_confirmation : "adminpassword"
-    email : "admin@email.com"
-settings : 
-    forum_title           : "Flarum Site Title"
-    welcome_title         : "Welcome title"
-    welcome_message       : "Welcome message"
-    uninett-auth-dataporten.client_id     : "___optional___"
-    uninett-auth-dataporten.client_secret : "___optional____"
-    mail_from             : "noreply@flarum.dev"
-    default_locale        : "no"
-    theme_colored_header  : 1
-    theme_primary_color   : "#ed1b34"
-    theme_secondary_color : "#010777"
-```
-
-- The section `adminUser` defines Flarum's administrator account.
-- Use section `settings` to change some of Flarum's defaults. Here, you may also enter your client's `Dataporten` OAuth ID and Secret (if you have already registered your client with Dataporten).
-
-Once installation is complete, Flarum will generate `config.php` with DB settings and push other settings that DB.
-
-### To reuse an existing Flarum DB:
-
-If you already have a Flarum DB populated with tables, settings, users, posts, etc., you may run a new container as follows, using ENVs (fill in the blanks):
-
-> docker run -d -p 80:80 -e DB_HOST=_______ -e DB_NAME=_______ -e DB_USER=_______ -e DB_PASS=_______ -e DB_PREFIX=_______ -e SITE_URL=_______ --name flarum uninettno/dataporten-flarum
-
-_Of course, it is imperative that the ENV vars you enter are according to an existing Flarum DB._
-
-The container can now access the ENV vars you passed in. The image includes an ENV-enabled Flarum config.php for this scenario. To activate it, run the following command:
-
-> docker exec -d flarum mv /app/config.php_ /app/config.php
-
-Done :)
+> docker run -d -p 80:80 --env-file=env.list --name flarum uninettno/dataporten-flarum
 
 ## Dataporten login
 
