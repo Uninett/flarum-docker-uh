@@ -20,7 +20,7 @@ Grab the image from Docker Hub: `docker pull uninettno/dataporten-flarum` (alt. 
 
 Note that, while Flarum is contained within the image, it has not been installed (i.e. configured).
 
-Create a file that contains your environment variables. Should look something like this 
+Create a file that contains your environment variables. Should look something like this (called something lie env.list)
 
 ```
 BASE_URL=http://localhost
@@ -36,7 +36,7 @@ DATAPORTEN_CLIENTID=DATAPORTEN_CLIENT_ID
 DATAPORTEN_CLIENTSECRET=DATAPORTEN_CLIENT_SECRET
 ```
 
-### To run a fresh install of Flarum
+### To run flarum
 
 Run a new container:
 
