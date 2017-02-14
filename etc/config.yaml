@@ -1,0 +1,20 @@
+baseUrl : "base_url_environment"
+databaseConfiguration :
+    host : "database_host_environment"
+    database : "database_name_environment"
+    username : "database_username_environment"
+    password : "database_password_environment"
+    prefix : "flarum_"
+adminUser : 
+    username : "admin_username_environment"
+    password : "admin_password_environment"
+    password_confirmation : "admin_pasword_conf_environment"
+    email : "admin_mail_environment"
+settings : 
+    forum_title           : "flarum_site_name_environment"
+    uninett-auth-dataporten.client_id     : "dataporten_client_id_environment"
+    uninett-auth-dataporten.client_secret : "dataporten_client_secret_environment"
+    mail_from             : "noreply@flarum.dev"
+    theme_colored_header  : 1
+    theme_primary_color   : "#ed1b34"
+    theme_secondary_color : "#010777"
