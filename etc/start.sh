@@ -29,5 +29,3 @@
 	php -q flarum migrate
 	/usr/local/bin/supervisord -n
 }
-
- 

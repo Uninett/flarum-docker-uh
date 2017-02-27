@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	/**
 	 * To use this as Flarum's config file in a running container:
@@ -19,7 +19,7 @@
 				'password'  => $_ENV['DB_PW'],
 				'charset'   => 'utf8mb4',
 				'collation' => 'utf8mb4_unicode_ci',
-				'prefix'    => "",
+				'prefix'    => "flarum_",
 				'strict'    => false,
 			),
 		'url'      => $_ENV['BASE_URL'],
