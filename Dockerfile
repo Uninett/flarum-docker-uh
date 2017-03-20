@@ -85,6 +85,13 @@ COPY etc/config.yaml /config.yaml
 COPY etc/start.sh /start.sh
 RUN chmod 755 /start.sh
 
+# ------------------
+# FLARUM-LOOKS
+# ------------------
+
+RUN echo "#other_sites_container{  background: white;  /* width: 100%; */  margin: 20px;  position: fixed;  padding: 10px;  bottom: 0px;  right: 0px;  border-radius: 8px;  z-index: 99999;  border: 0.5px solid black;}#other_sites_container a, #other_sites_container a:focus, #other_sites_container a:visited{  color: red;}#other_sites_container a:hover{  color: coral;}" >> /app/vendor/flarum/core/less/forum/app.less
+RUN echo "echo \"<div id='other_sites_container'><a href='https://chat.uninett.no'>Chat</a> | <span id='active_site'>Flarum</span> | <a href='https://samskrive.uninett.no'>Samskrive</a></div>\";" >> /app/index.php
+
 EXPOSE 80
 
 CMD ["/bin/bash", "/start.sh"]
